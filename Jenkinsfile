@@ -7,5 +7,7 @@ node {
 
         /* Push the container to the custom Registry */
         customImage.push()
+        
     }
+    checkout([$class: 'GitSCM', branches: [[name: '*/*']], extensions: [[$class: 'CloneOption', noTags: false, reference: '', shallow: false, timeout: 120]], userRemoteConfigs: [[]]])
 }
